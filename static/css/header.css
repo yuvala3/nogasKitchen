@@ -1,0 +1,96 @@
+/* פס עליון כמו Artaste – ירוק, נקי, מודרני */
+
+.main-header {
+    background-color: #5F7B69;          /* ירוק עמוק */
+    color: #ffffff;
+    direction: ltr;                    /* כדי שהלוגו יהיה משמאל והלב מימין */
+}
+
+/* מיכל פנימי – מרכז את התוכן ומגביל רוחב */
+.header-inner {
+    margin: 0 auto;
+    padding: 10px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+/* לוגו משמאל */
+.header-logo img {
+    height: 40px;
+    width: auto;
+    display: block;
+}
+
+/* תפריט במרכז */
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 7px;
+    direction: rtl; /* הטקסט בעברית יישאר טבעי */
+}
+
+.main-nav li {
+    position: relative;
+    padding-inline: 12px;
+}
+
+/* לינקים */
+.main-nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.95rem;
+    white-space: nowrap;
+}
+
+.main-nav a:hover {
+    opacity: 0.5;
+}
+
+/* אייקון לב מימין */
+.header-actions {
+    display: flex;
+    align-items: center;
+}
+
+.heart-btn {
+    font-size: 1.4rem;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 4px 8px;
+    border-radius: 999px;
+    border: 1px solid transparent;
+    transition: 0.2s ease;
+    line-height: 1;
+}
+
+.heart-btn:hover {
+    border-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.06);
+}
+
+/* רספונסיביות בסיסית לנייד */
+@media (max-width: 900px) {
+    .header-inner {
+        padding: 10px 16px;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .main-nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .main-nav li {
+        padding-inline: 6px;
+    }
+
+    .main-nav li + li::before {
+        left: -6px;
+    }
+}

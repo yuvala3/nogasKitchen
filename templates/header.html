@@ -1,0 +1,31 @@
+<header class="main-header">
+    <div class="header-inner">
+
+        <!-- לוגו משמאל -->
+        <div class="header-logo">
+            <a href="{{ url_for('home') }}">
+                <img src="{{ url_for('static', filename='img/NogasKitchen.png') }}"
+                     alt="Noga's kitchen logo">
+            </a>
+        </div>
+
+        <!-- תפריט קטגוריות במרכז -->
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#mains">מנות עיקריות</a></li> |
+                <li><a href="#sides">תוספות</a></li> |
+                <li><a href="#dairy">חלבי</a></li> |
+                <li><a href="#vegan">טבעוני</a></li> |
+                <li><a href="#vegetarian">צמחוני</a></li> |
+                <li><a href="#glutenfree">ללא גלוטן</a></li> |
+                <li><a href="#contact">צור קשר</a></li>
+            </ul>
+        </nav>
+
+        <!-- לב מימין -->
+        <div class="header-actions">
+            <a href="#favorites" class="heart-btn" aria-label="מנות שאהבתי">♡</a>
+        </div>
+
+    </div>
+</header>

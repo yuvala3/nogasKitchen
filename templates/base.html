@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    {% block page_head %}
+        <title>
+            NogasKitchen |
+            {{ page_head_title|default('Flask site', true) }}
+        </title>
+
+        <meta charset="UTF-8"/>
+        <meta name="author" content="NogasKitchen"/>
+        <meta name="description" content="NogasKitchen gluten free kitchen"/>
+
+        <!-- CSS בסיסי -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
+
+        {% block page_head_css %}{% endblock %}
+    {% endblock %}
+</head>
+<body>
+
+{% block page_body_content %}
+
+    <!-- Header -->
+    {% block page_body_header %}
+        {% include 'header.html' %}
+    {% endblock %}
+
+    <!-- Main -->
+    {% block page_body_main %}
+        {% block page_body_main_content %}{% endblock %}
+    {% endblock %}
+
+    <!-- Footer (אם תרצי בהמשך) -->
+    {% block page_body_footer %}{% endblock %}
+
+{% endblock %}
+
+{% block page_body_js %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,179 @@
+/* ------- מבנה כללי של עמוד הבית ------- */
+
+.homepage {
+    padding: 30px 6vw 60px;
+    box-sizing: border-box;
+}
+
+/* ------- HERO עם תמונת רקע ------- */
+
+.hero-with-image {
+    position: relative;
+    min-height: 360px;
+    margin: 0 auto 60px;
+    max-width: 1150px;
+    border-radius: 28px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top right,
+        rgba(0, 0, 0, 0.3),
+        rgba(0, 0, 0, 0.3)
+    );
+}
+
+.hero-inner {
+    position: relative;
+    text-align: center;
+    padding: 40px 32px;
+    max-width: 650px;
+}
+
+/* טקסטים בהירו */
+
+.hero-kicker {
+    font-size: 1.9rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    color: #f5e8d6;
+}
+
+.hero-inner h1 {
+    font-size: 2.5rem;
+    margin: 0 0 12px;
+}
+
+.hero-subtitle {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin: 0 0 24px;
+}
+
+/* כפתורי ההירו */
+
+.hero-actions {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+/* כפתורים כלליים */
+
+.btn {
+    display: inline-block;
+    padding: 10px 22px;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+/* אם כבר הגדרת משתני צבעים ב-base.css, אפשר להשתמש בהם כאן */
+.btn.primary {
+    background-color: #4e6f5a;         /* ירוק עמוק, מודרני */
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+.btn.primary:hover {
+    background-color: #618a6f;
+    transform: translateY(-2px);
+}
+
+.btn.secondary {
+    background-color: transparent;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+}
+
+.btn.secondary:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+    transform: translateY(-2px);
+}
+
+/* ------- "למה Noga's kitchen?" – אזור הכרטיסים ------- */
+
+/* ---------- WHY SECTION ---------- */
+
+.why-section {
+    padding: 10px 6vw 70px;
+}
+
+/* כותרת עליונה של הסקשן */
+.section-header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.section-kicker {
+    font-size: 1.5rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--kicker);
+    margin-bottom: 6px;
+}
+
+
+/* גריד של הכרטיסים */
+.cards {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+/* כרטיס בודד */
+.card {
+    position: relative;
+    background-color: var(--card-bg);
+    border-radius: 22px;
+    padding: 26px 22px 22px;
+    width: 270px;
+    max-width: 100%;
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.06);
+    border: 1px solid var(--card-border);
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+/* פס עדין בראש הכרטיס */
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 14px;
+    left: 14px;
+    height: 4px;
+    border-radius: 0 0 999px 999px;
+    background: linear-gradient(to left, var(--primary), var(--accent));
+    opacity: 0.6;
+}
+
+/* אייקון עגול למעלה */
+.card-icon {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto 10px;
+    border-radius: 50%;
+    background: rgba(142, 164, 128, 0.12); /* ירקרק עדין */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+}
+

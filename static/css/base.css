@@ -1,0 +1,52 @@
+:root {
+    --bg-main: #F6F0E8;          /* רקע כללי – שמנת נעים */
+    --bg-section: #F0E4D5;       /* רקעי בלוקים (כמו ההירו למעלה) */
+    --primary: #4E2D6F;          /* סגול חציל לכותרות וכפתורים */
+    --primary-soft: #6A3E9E;     /* וריאציה מעט בהירה יותר */
+    --accent: #8A9A79;           /* ירוק מרווה */
+    --kicker: #C2A98A;           /* חום עדין לטקסטים קטנים */
+    --card-bg: #FFFFFF;          /* רקע כרטיס */
+    --card-border: #E1D5C6;      /* קו עדין לכרטיסים */
+    --text-main: #2E211A;        /* טקסט ראשי */
+    --text-muted: #6E5B4A;       /* טקסט משני */
+}
+
+body {
+    font-family: 'Calibri', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+#loader::before {
+    content: '';
+    width: 40px;
+    height: 40px;
+    border: 5px solid #290A6A;
+    border-top: 5px solid transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}

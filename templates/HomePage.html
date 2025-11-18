@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% set page_head_title = 'Homepage' %}
+
+{% block page_head_css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/HomePage.css') }}">
+{% endblock %}
+
+{% block page_body_main_content %}
+<main class="homepage">
+       <section class="hero hero-with-image"
+             style="background-image: url('{{ url_for('static', filename='img/boxes-noga.jpg') }}');">
+        <div class="hero-overlay"></div>
+
+        <div class="hero-inner">
+            <p class="hero-kicker">המטבח של נגה</p>
+
+            <h1>מטבח ביתי, טרי ומפנק</h1>
+
+            <p class="hero-subtitle">
+                מנות ביתיות שמוכנות בהזמנה אישית, עם הרבה אהבה – לשבת, לאירוח או פשוט ליום שצריך בו אוכל טוב.
+            </p>
+        </div>
+    </section>
+
+    <section class="features why-section">
+    <div class="section-header">
+        <p class="section-kicker">מה מיוחד אצלנו?</p>
+    </div>
+
+    <div class="cards">
+        <article class="card">
+            <div class="card-icon">🌾</div>
+            <h3>אפשרות למנות ללא גלוטן</h3>
+            <p>
+                המנות ללא גלוטן מוכנות רק במטבח ייעודי ונפרד –
+                כדי לשמור על סביבה בטוחה ונקייה מחשיפה לגלוטן.
+            </p>
+        </article>
+
+        <article class="card">
+            <div class="card-icon">🏠</div>
+            <h3>טעם של בית</h3>
+            <p>
+                מנות שאפשר להגיש לאורחים, למשפחה
+                או פשוט לפנק את עצמך בסוף יום עמוס.
+            </p>
+        </article>
+
+        <article class="card">
+            <div class="card-icon">📦</div>
+            <h3>גמישות והזמנה נוחה</h3>
+            <p>
+                הזמנה 48 שעות מראש, מחירים נוחים
+                ואפשרות משלוח עד הבית בתיאום טלפוני.
+            </p>
+        </article>
+    </div>
+</section>
+</main>
+{% endblock %}
