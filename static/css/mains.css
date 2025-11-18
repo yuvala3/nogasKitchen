@@ -1,0 +1,92 @@
+.menu-page {
+    padding: 20px 40px;
+    text-align: center;
+}
+
+.page-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #3b4640;
+    margin-bottom: 30px;
+}
+
+/* גריד של המנות */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 28px;
+}
+
+/* כרטיס של מנה */
+.menu-item {
+    background: #ffffff;
+    border-radius: 14px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    transition: transform .2s ease;
+}
+
+.menu-item:hover {
+    transform: translateY(-5px);
+}
+
+/* תמונה */
+.item-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* טקסט מתחת לתמונה */
+.item-details {
+    padding: 16px;
+    text-align: right;  /* כי זה עברית */
+}
+
+.item-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.item-desc {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 14px;
+}
+
+/* מחיר בתחתית */
+.item-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #3b4640;
+}
+
+/* אייקון מועדפים */
+.favorite-icon {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: rgba(255,255,255,0.9);
+    padding: 6px;
+    border-radius: 50%;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.favorite-icon img {
+    width: 22px;
+    height: 22px;
+}
+
+.favorite-icon:hover {
+    transform: scale(1.15);
+}

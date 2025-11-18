@@ -12,20 +12,36 @@
         <!-- תפריט קטגוריות במרכז -->
         <nav class="main-nav">
             <ul>
-                <li><a href="#mains">מנות עיקריות</a></li> |
-                <li><a href="#sides">תוספות</a></li> |
-                <li><a href="#dairy">חלבי</a></li> |
-                <li><a href="#vegan">טבעוני</a></li> |
-                <li><a href="#vegetarian">צמחוני</a></li> |
-                <li><a href="#glutenfree">ללא גלוטן</a></li> |
-                <li><a href="#contact">צור קשר</a></li>
+                <li><a href="{{ url_for('mains') }}">מנות עיקריות</a></li> |
+                <li><a href="{{ url_for('sides') }}">תוספות</a></li> |
+                <li><a href="{{ url_for('dairy') }}">חלבי</a></li> |
+                <li><a href="{{ url_for('vegan') }}">טבעוני</a></li> |
+                <li><a href="{{ url_for('vegetarian') }}">צמחוני</a></li> |
+                <li><a href="{{ url_for('glutenfree') }}">ללא גלוטן</a></li> |
+                <li><a href="{{ url_for('contact') }}">צור קשר</a></li>
             </ul>
         </nav>
 
-        <!-- לב מימין -->
-        <div class="header-actions">
-            <a href="#favorites" class="heart-btn" aria-label="מנות שאהבתי">♡</a>
-        </div>
 
+        <div class="header-actions">
+            <div class="instagram-btn">
+                <a href="https://www.instagram.com/nogas__kitchen?igsh=MWMzNndidnN6enhzaA%3D%3D&utm_source=qr" target="_blank">
+                    <img src="{{ url_for('static', filename='img/instagram.png') }}" alt="Instagram">
+                </a>
+            </div>
+            <div class="favorite-btn">
+                <a href="{{ url_for('favorite') }}">
+                    <img src="{{ url_for('static', filename='img/heart.png') }}"
+                         alt="favorites logo">
+                </a>
+            </div>
+        </div>
     </div>
 </header>
+
+
+
+
+
+
+

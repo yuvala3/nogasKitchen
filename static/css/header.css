@@ -1,36 +1,53 @@
-/* פס עליון כמו Artaste – ירוק, נקי, מודרני */
+/* ------------------------------
+   פס עליון – ירוק, נקי, מודרני
+--------------------------------*/
 
 .main-header {
-    background-color: #5F7B69;          /* ירוק עמוק */
+    background-color: #5F7B69;     /* ירוק עמוק */
     color: #ffffff;
-    direction: ltr;                    /* כדי שהלוגו יהיה משמאל והלב מימין */
+    direction: ltr;               /* לוגו משמאל, אייקונים מימין */
 }
 
-/* מיכל פנימי – מרכז את התוכן ומגביל רוחב */
+/* מיכל פנימי – grid: לוגו | תפריט | אייקונים */
 .header-inner {
     margin: 0 auto;
     padding: 10px 32px;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr; /* לוגו | nav | אייקונים */
     align-items: center;
-    justify-content: space-between;
     box-sizing: border-box;
+    width: 100%;
 }
 
-/* לוגו משמאל */
+/* ------------------------------
+   לוגו
+--------------------------------*/
+
+.header-logo {
+    justify-self: start;
+}
+
 .header-logo img {
     height: 40px;
     width: auto;
     display: block;
 }
 
-/* תפריט במרכז */
+/* ------------------------------
+   תפריט ניווט במרכז
+--------------------------------*/
+
+.main-nav {
+    justify-self: center;
+}
+
 .main-nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
-    gap: 7px;
-    direction: rtl; /* הטקסט בעברית יישאר טבעי */
+    gap: 10px;
+    direction: rtl;   /* כדי שהטקסט בעברית ייראה תקין */
 }
 
 .main-nav li {
@@ -38,7 +55,7 @@
     padding-inline: 12px;
 }
 
-/* לינקים */
+/* לינקים בתפריט */
 .main-nav a {
     color: #ffffff;
     text-decoration: none;
@@ -50,47 +67,97 @@
     opacity: 0.5;
 }
 
-/* אייקון לב מימין */
+/* ------------------------------
+   אייקונים מימין (לב + אינסטגרם)
+--------------------------------*/
+
 .header-actions {
+    justify-self: end;
     display: flex;
     align-items: center;
 }
 
-.heart-btn {
-    font-size: 1.4rem;
-    color: #ffffff;
-    text-decoration: none;
-    padding: 4px 8px;
-    border-radius: 999px;
-    border: 1px solid transparent;
-    transition: 0.2s ease;
-    line-height: 1;
+/* לב */
+.favorite-btn a img {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+    display: block;
+    transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
-.heart-btn:hover {
-    border-color: rgba(255, 255, 255, 0.7);
-    background-color: rgba(255, 255, 255, 0.06);
+.favorite-btn:hover a img {
+    transform: scale(1.15);
+    opacity: 0.85;
 }
 
-/* רספונסיביות בסיסית לנייד */
+.favorite-btn {
+    padding: 6px;
+    border-radius: 50%;
+    transition: background-color 0.2s ease;
+}
+
+.favorite-btn:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+}
+
+/* אינסטגרם – מראה נקי כמו הלב */
+.instagram-btn a img {
+    width: 26px;
+    height: 26px;
+    object-fit: contain;
+    display: block;
+    filter: brightness(0) invert(1); /* הופך את האייקון ללבן */
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.instagram-btn:hover a img {
+    transform: scale(1.15);
+    opacity: 0.85;
+}
+
+.instagram-btn {
+    padding: 6px;
+    border-radius: 50%;
+    transition: background-color 0.2s ease;
+}
+
+.instagram-btn:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+}
+
+/* ריווח בין האייקונים */
+.header-actions > div {
+    margin-left: 12px;
+}
+
+/* ------------------------------
+   רספונסיביות לנייד
+--------------------------------*/
+
 @media (max-width: 900px) {
     .header-inner {
         padding: 10px 16px;
-        flex-wrap: wrap;
-        gap: 8px;
+        grid-template-columns: 1fr;   /* לוגו / תפריט / אייקונים אחד מעל השני */
+        row-gap: 8px;
+        justify-items: center;
+    }
+
+    .header-logo {
+        justify-self: center;
+    }
+
+    .header-actions {
+        justify-self: center;
     }
 
     .main-nav ul {
         flex-wrap: wrap;
         justify-content: center;
-        gap: 12px;
+        gap: 8px;
     }
 
     .main-nav li {
         padding-inline: 6px;
-    }
-
-    .main-nav li + li::before {
-        left: -6px;
     }
 }
