@@ -32,14 +32,6 @@
         </div>
 
         <div class="cards">
-            <article class="card">
-                <div class="card-icon">🌾</div>
-                <h3>אפשרות למנות ללא גלוטן</h3>
-                <p>
-                    המנות ללא גלוטן מוכנות רק במטבח ייעודי ונפרד –
-                    כדי לשמור על סביבה בטוחה ונקייה מחשיפה לגלוטן.
-                </p>
-            </article>
 
             <article class="card">
                 <div class="card-icon">🏠</div>
@@ -51,6 +43,15 @@
             </article>
 
             <article class="card">
+                <div class="card-icon">🌾</div>
+                <h3>אפשרות למנות ללא גלוטן</h3>
+                <p>
+                    המנות ללא גלוטן מוכנות רק במטבח ייעודי ונפרד –
+                    כדי לשמור על סביבה בטוחה ונקייה מחשיפה לגלוטן.
+                </p>
+            </article>
+
+            <article class="card">
                 <div class="card-icon">📦</div>
                 <h3>גמישות והזמנה נוחה</h3>
                 <p>
@@ -58,8 +59,41 @@
                     ואפשרות משלוח עד הבית בתיאום טלפוני.
                 </p>
             </article>
+
+            <article class="card">
+            <div class="card-icon">🎉</div>
+            <h3>אירועים והזמנות מיוחדות</h3>
+            <p>
+                מתאים לאירועים קטנים כמו הפרשת חלה, שבת חתן, בר/בת מצווה,
+                ימי הולדת ואירוח בבית – מגוון מנות שיתאימו לכל אירוע.
+            </p>
+             </article>
+
         </div>
     </section>
+
+<section class="testimonials-section">
+    <h2 class="testimonials-title">מה חושבים על המטבח של נגה</h2>
+
+    <div class="testimonials-grid">
+        {% for t in testimonials %}
+        <article class="testimonial-card">
+            <div class="quote-mark">״</div>
+
+            <p class="testimonial-text">
+                {{ t.text }}
+            </p>
+            <div class="testimonial-bottom">
+                <div class="testimonial-name">{{ t.name }}</div>
+                <div class="stars">{{ '★' * t.stars }}</div>
+            </div>
+        </article>
+        {% endfor %}
+    </div>
+</section>
+
+
+
 
 </main>
 {% endblock %}

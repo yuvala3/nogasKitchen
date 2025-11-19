@@ -1,7 +1,6 @@
 /* ------- מבנה כללי של עמוד הבית ------- */
 
 .homepage {
-    padding: 30px 6vw 60px;
     box-sizing: border-box;
 }
 
@@ -9,24 +8,25 @@
 
 /* hero – רקע תמונות מתחלפות */
 .hero-with-image {
+    width: 100vw;               /* פריסה על כל רוחב המסך */
+    margin-left: calc(50% - 50vw); /* ביטול המרווח של הקונטיינר */
+    height: 60vh;               /* או כמה שמתאים לך */
     position: relative;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    min-height: 420px;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: background-image 1s ease-in-out;
-    border-radius: 15px;
 }
 
 .hero-overlay {
     position: absolute;
     inset: 0;
     background: linear-gradient(120deg, rgba(0,0,0,0.45), rgba(0,0,0,0.2));
-    border-radius: 15px;
 }
+
 
 .hero-inner {
     position: relative;
@@ -137,8 +137,8 @@
     position: relative;
     background-color: var(--card-bg);
     border-radius: 22px;
-    padding: 26px 22px 22px;
-    width: 270px;
+    padding: 26px 10px 10px;
+    width: 230px;
     max-width: 100%;
     box-shadow: 0 14px 30px rgba(0, 0, 0, 0.06);
     border: 1px solid var(--card-border);
@@ -146,18 +146,7 @@
     transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
-/* פס עדין בראש הכרטיס */
-.card::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 14px;
-    left: 14px;
-    height: 4px;
-    border-radius: 0 0 999px 999px;
-    background: linear-gradient(to left, var(--primary), var(--accent));
-    opacity: 0.6;
-}
+
 
 /* אייקון עגול למעלה */
 .card-icon {
@@ -183,6 +172,85 @@
 .fade-delay-1 { animation-delay: 0.2s; }
 .fade-delay-2 { animation-delay: 0.5s; }
 .fade-delay-3 { animation-delay: 0.8s; }
+
+
+/*testimonials*/
+
+.testimonials-section {
+    padding: 70px 20px 90px;
+    background-color: #f6f0e9;
+    text-align: center;
+    direction: rtl;
+}
+
+.testimonials-title {
+    font-size: 2rem;
+    color: #3b4640;
+    margin-bottom: 40px;
+    font-weight: 300;
+}
+
+/* גריד של ההמלצות */
+.testimonials-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 24px;
+}
+
+/* כרטיס המלצה */
+.testimonial-card {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 19px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;   /* ↓↓↓ זה מה שדוחף את השם והכוכבים למטה */
+    min-height: 260px;                 /* גובה אחיד לכרטיסים */
+    position: relative;
+    text-align: right;
+}
+
+/* גרש למעלה */
+.quote-mark {
+    font-size: 38px;
+    color: #3b4640;
+    margin-bottom: 0px;
+}
+
+/* טקסט ההמלצה */
+.testimonial-text {
+    font-size: 1rem;
+    line-height: 1.65;
+    color: #333;
+    margin-bottom: 10px;
+    flex-grow: 1;       /* תופס מקום כדי לדחוף את החלק התחתון למטה */
+    margin-top: 0px;
+}
+
+/* אזור תחתון */
+.testimonial-bottom {
+    margin-top: auto;   /* דוחף את זה לתחתית */
+    text-align: right;
+}
+
+/* שם */
+.testimonial-name {
+    font-weight: 600;
+    color: #3b4640;
+    margin-bottom: 6px;
+}
+
+/* כוכבים */
+.stars {
+    color: #d62828;
+    font-size: 1.1rem;
+}
+
+
+
 
 @keyframes fadeDown {
     to {
