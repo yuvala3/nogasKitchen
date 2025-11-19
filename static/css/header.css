@@ -77,37 +77,31 @@
     align-items: center;
 }
 
-/* לב */
-.favorite-btn a img {
-    width: 35px;
-    height: 35px;
-    object-fit: contain;
-    display: block;
-    transition: transform 0.2s ease, opacity 0.2s ease;
-}
-
-.favorite-btn:hover a img {
-    transform: scale(1.15);
-    opacity: 0.85;
-}
-
-.favorite-btn {
+/* כפתור ווצאפ */
+.whatsapp-btn {
     padding: 6px;
     border-radius: 50%;
     transition: background-color 0.2s ease;
 }
 
-.favorite-btn:hover {
-    background-color: rgba(255, 255, 255, 0.12);
+.whatsapp-btn img {
+    width: 41px;
+    height: 41px;
+    object-fit: contain;
+    display: block;
 }
 
-/* אינסטגרם – מראה נקי כמו הלב */
+.whatsapp-btn:hover {
+    background-color: #25d36633;
+}
+
+/* אינסטגרם – מראה נקי */
 .instagram-btn a img {
     width: 26px;
     height: 26px;
     object-fit: contain;
     display: block;
-    filter: brightness(0) invert(1); /* הופך את האייקון ללבן */
+    filter: brightness(0) invert(1);
     transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
@@ -126,10 +120,12 @@
     background-color: rgba(255, 255, 255, 0.12);
 }
 
-/* ריווח בין האייקונים */
+/* ריווח */
 .header-actions > div {
     margin-left: 12px;
 }
+
+
 
 /* ------------------------------
    רספונסיביות לנייד

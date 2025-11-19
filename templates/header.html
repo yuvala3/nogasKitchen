@@ -12,13 +12,12 @@
         <!-- תפריט קטגוריות במרכז -->
         <nav class="main-nav">
             <ul>
+                <li><a href="{{ url_for('fishes') }}">דגים</a></li> |
                 <li><a href="{{ url_for('mains') }}">מנות עיקריות</a></li> |
                 <li><a href="{{ url_for('sides') }}">תוספות</a></li> |
                 <li><a href="{{ url_for('dairy') }}">חלבי</a></li> |
-                <li><a href="{{ url_for('vegan') }}">טבעוני</a></li> |
-                <li><a href="{{ url_for('vegetarian') }}">צמחוני</a></li> |
-                <li><a href="{{ url_for('glutenfree') }}">ללא גלוטן</a></li> |
-                <li><a href="{{ url_for('contact') }}">צור קשר</a></li>
+                <li><a href="{{ url_for('soups') }}">מרקים</a></li> |
+                <li><a href="{{ url_for('glutenfree') }}">ללא גלוטן</a></li>
             </ul>
         </nav>
 
@@ -29,12 +28,12 @@
                     <img src="{{ url_for('static', filename='img/instagram.png') }}" alt="Instagram">
                 </a>
             </div>
-            <div class="favorite-btn">
-                <a href="{{ url_for('favorite') }}">
-                    <img src="{{ url_for('static', filename='img/heart.png') }}"
-                         alt="favorites logo">
-                </a>
-            </div>
+            <a class="whatsapp-btn"
+               href="https://wa.me/972509000132?text=%D7%94%D7%99%D7%99%20%D7%A0%D7%92%D7%94%2C%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%94%D7%96%D7%9E%D7%99%D7%9F%20%D7%9E%D7%A0%D7%94%20%D7%91%D7%91%D7%A7%D7%A9%D7%94%20%E2%9D%A4%EF%B8%8F"
+               target="_blank">
+                    <img src="{{ url_for('static', filename='img/whatsapp.png') }}"
+                     alt="שליחת ווצאפ לנגה" class="whatsapp-icon">
+            </a>
         </div>
     </div>
 </header>

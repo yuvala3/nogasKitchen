@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% set page_head_title = 'מנות עיקריות' %}
+{% set page_head_title = page_title %}
 
 {% block page_head_css %}
     {{ super() }}
@@ -8,14 +8,12 @@
 
 {% block page_body_main_content %}
 <main class="menu-page">
-    <h1 class="page-title">מנות עיקריות</h1>
+    <h1 class="page-title">{{ page_title }}</h1>
+    <h2 class="page-details">{{page_details}}</h2>
 
-    <p style="text-align:center; margin-bottom: 1rem;">
-        (DEBUG) מספר מנות: {{ mains|length }}
-    </p>
 
     <div class="menu-grid">
-        {% for item in mains %}
+        {% for item in items %}
         <div class="menu-item">
 
             <img class="item-image"
@@ -28,7 +26,6 @@
 
                 <div class="price-row">
                     <span class="price">{{ item.price }} ₪</span>
-                    <button class="fav-btn">🤍</button>
                 </div>
             </div>
         </div>

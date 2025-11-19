@@ -7,40 +7,35 @@
 
 /* ------- HERO עם תמונת רקע ------- */
 
+/* hero – רקע תמונות מתחלפות */
 .hero-with-image {
     position: relative;
-    min-height: 360px;
-    margin: 0 auto 60px;
-    max-width: 1150px;
-    border-radius: 28px;
-    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 420px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-size: cover;
-    background-position: center;
-    color: #fff;
+    transition: background-image 1s ease-in-out;
+    border-radius: 15px;
 }
 
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(
-        to top right,
-        rgba(0, 0, 0, 0.3),
-        rgba(0, 0, 0, 0.3)
-    );
+    background: linear-gradient(120deg, rgba(0,0,0,0.45), rgba(0,0,0,0.2));
+    border-radius: 15px;
 }
 
 .hero-inner {
     position: relative;
     text-align: center;
-    padding: 40px 32px;
-    max-width: 650px;
+    color: #fff;
 }
 
-/* טקסטים בהירו */
 
+/* טקסטים בהירו */
 .hero-kicker {
     font-size: 1.9rem;
     letter-spacing: 0.12em;
@@ -177,3 +172,21 @@
     font-size: 1.3rem;
 }
 
+
+/* אנימציית כניסה מלמעלה */
+.fade-down {
+    opacity: 0;
+    transform: translateY(-22px);
+    animation: fadeDown 0.9s ease-out forwards;
+}
+
+.fade-delay-1 { animation-delay: 0.2s; }
+.fade-delay-2 { animation-delay: 0.5s; }
+.fade-delay-3 { animation-delay: 0.8s; }
+
+@keyframes fadeDown {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
